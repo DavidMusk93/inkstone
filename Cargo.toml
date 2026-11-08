@@ -1,0 +1,32 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/notebase",
+    "crates/notebase-store",
+    "crates/notebase-sync",
+    "crates/notebase-ffi",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.82"
+license = "MIT"
+repository = "https://github.com/DavidMusk93/notebase"
+homepage = "https://github.com/DavidMusk93/notebase"
+keywords = ["notes", "crdt", "local-first", "sync", "editor"]
+categories = ["text-processing", "database"]
+
+[workspace.dependencies]
+notebase = { path = "crates/notebase" }
+notebase-store = { path = "crates/notebase-store" }
+notebase-sync = { path = "crates/notebase-sync" }
+notebase-ffi = { path = "crates/notebase-ffi" }
+loro = "1.17"
+rusqlite = { version = "0.41", features = ["bundled"] }
+zstd = "0.14"
+thiserror = "2"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1

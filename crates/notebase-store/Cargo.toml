@@ -1,0 +1,17 @@
+[package]
+name = "notebase-store"
+description = "SQLite storage for notebase notes: append-only oplog, snapshots, blobs, search"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+
+[dependencies]
+notebase.workspace = true
+rusqlite.workspace = true
+zstd.workspace = true
+thiserror.workspace = true
+blake3 = "1"
+uuid = { version = "1", features = ["v4"] }
